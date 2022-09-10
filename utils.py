@@ -399,8 +399,8 @@ async def get_shortlink(link):
                     return data['shortlink']
                 else:
                     logger.error(f"Error: {data['message']}")
-                    return f'https://shorturllink.in/api?api={SHORTENER_API}&url={link}&format=json'
+                    return f'https://shorturllink.in/api?api={SHORTENER_API}&url={link}&format=text'
 
     except Exception as e:
         logger.error(e)
-        return f'https://shorturllink.in/api?api={SHORTENER_API}&url={link}&format=json'
+        return f'https://shorturllink.in/api?api={SHORTENER_API}&url={link}&format=text'
