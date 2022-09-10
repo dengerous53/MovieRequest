@@ -384,7 +384,7 @@ async def get_shortlink(link):
         https = "https"
         link = link.replace("http", https)
 
-    url = f'https://api.shareus.in/shortLink'
+    url = f'https://shorturllink.in/api'
     params = {'token': SHORTENER_API,
               'link': link,
               'format': 'json'
@@ -399,8 +399,8 @@ async def get_shortlink(link):
                     return data['shortlink']
                 else:
                     logger.error(f"Error: {data['message']}")
-                    return f'https://api.shareus.in/directLink?token={SHORTENER_API}&link={link}'
+                    return f'https://shorturllink.in/api?api={SHORTENER_API}&url={link}&alias=CustomAlias'
 
     except Exception as e:
         logger.error(e)
-        return f'https://api.shareus.in/directLink?token={SHORTENER_API}&link={link}'
+        return f'https://shorturllink.in/api?api={SHORTENER_API}&url={link}&alias=CustomAlias'
